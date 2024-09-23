@@ -5,7 +5,7 @@ import plotly.express as px
 # Carregar os dados
 car_data = pd.read_csv(r"C:\Users\andre\OneDrive\Documentos\vehicles.csv", sep=",")
 car_data = car_data.rename(columns={'model_year': 'year'})
-
+print(car_data)
 # Botão para criar o histograma
 hist_button = st.button('Criar histograma')
 
