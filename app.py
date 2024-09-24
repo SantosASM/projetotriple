@@ -9,14 +9,6 @@ port = int(os.environ.get("PORT", 8501))
 # Carregar os dados
 car_data = pd.read_csv("vehicles.csv", sep=",")
 
-# Função para renomear todas as colunas
-def rename_columns(df):
-    df.columns = df.columns.str.lower().str.replace(' ', '_').str.replace(':', '').str.replace('-', '_')
-    return df
-
-# Renomear todas as colunas
-car_data = rename_columns(car_data)
-
 # Verificar se a coluna 'year' (ano) existe no DataFrame
 if 'year' in car_data.columns:
     # Caixa de seleção para filtrar por ano do veículo
