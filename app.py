@@ -9,7 +9,7 @@ port = int(os.environ.get("PORT", 8501))
 # Carregar os dados
 car_data = pd.read_csv("vehicles.csv", sep=",")
 
-car_data = car_data.rename(columns={'model_year': 'year'})
+car_data = car_data.rename(columns={'model_year': 'year', 'condition: 'condition'})
 
 # Caixa de seleção para filtrar por condição do veículo
 condition_options = car_data['condition'].unique()
