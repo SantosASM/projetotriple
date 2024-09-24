@@ -7,7 +7,7 @@ import plotly.express as px
 port = int(os.environ.get("PORT", 8501))
 
 # Carregar os dados
-car_data = pd.read_csv(r"C:\Users\Santos\Documents\vehicles.csv", sep=",")
+car_data = pd.read_csv(r"C:\Users\andre\OneDrive\Documentos\vehicles.csv", sep=",")
 car_data = car_data.rename(columns={'model_year': 'year'})
 
 # Caixa de seleção para filtrar por condição do veículo
