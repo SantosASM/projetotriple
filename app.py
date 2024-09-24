@@ -17,13 +17,6 @@ def rename_columns(df):
 # Renomear todas as colunas
 car_data = rename_columns(car_data)
 
-# Botão para mostrar amostra dos dados renomeados
-sample_button = st.button('Mostrar amostra dos dados renomeados')
-
-if sample_button:
-    st.header("Amostra dos Dados Renomeados")
-    st.write(car_data.head())  # Exibe as 5 primeiras linhas do DataFrame
-
 # Verificar se a coluna 'year' (ano) existe no DataFrame
 if 'year' in car_data.columns:
     # Caixa de seleção para filtrar por ano do veículo
