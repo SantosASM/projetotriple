@@ -9,8 +9,15 @@ port = int(os.environ.get("PORT", 8501))
 # Carregar os dados
 car_data = pd.read_csv("vehicles.csv", sep=",")
 
-car_data = car_data.rename(columns={'model_year': 'year', 'condition': 'condition'})
+# Renomear a coluna 'model_year' para 'year'
+car_data = car_data.rename(columns={'model_year': 'year'})
 
+# Botão para mostrar amostra dos dados
+sample_button = st.button('Mostrar amostra dos dados')
+
+if sample_button:
+    st.header("Amostra dos Dados")
+    st.write(car_data.head())  # Exibe as 5 primeiras linhas do DataFrame
 
 # Caixa de seleção para filtrar por condição do veículo
 condition_options = car_data['condition'].unique()
