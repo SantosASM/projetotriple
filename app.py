@@ -1,9 +1,16 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# Obter a porta da variável de ambiente fornecida pelo Render
+port = int(os.environ.get("PORT", 8501))
+
+# Configuração para garantir que o Streamlit utilize a porta correta
+st.set_option('server.port', port)
+
 # Carregar os dados
-car_data = pd.read_csv(r"C:\Users\andre\OneDrive\Documentos\vehicles.csv", sep=",")
+car_data = pd.read_csv(r"C:\Users\Santos\Documents\vehicles.csv", sep=",")
 car_data = car_data.rename(columns={'model_year': 'year'})
 
 # Caixa de seleção para filtrar por condição do veículo
