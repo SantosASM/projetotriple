@@ -8,16 +8,6 @@ port = int(os.environ.get("PORT", 8501))
 
 # Carregar os dados
 car_data = pd.read_csv("vehicles.csv", sep=",")
-
-# Verificar se a coluna 'year' (ano) existe no DataFrame
-if 'year' in car_data.columns:
-    # Caixa de seleção para filtrar por ano do veículo
-    year_options = car_data['year'].unique()
-    selected_year = st.selectbox("Selecione o ano do veículo", options=year_options)
-
-    # Filtrar os dados pelo ano selecionado
-    filtered_data = car_data[car_data['year'] == selected_year]
-    
     # Botão para criar o histograma
     hist_button = st.button('Criar histograma')
 
