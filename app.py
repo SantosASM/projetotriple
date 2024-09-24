@@ -33,5 +33,4 @@ car_data = pd.read_csv("vehicles.csv", sep=",")
         
         # Exibir o gráfico de dispersão
         st.plotly_chart(fig_scatter, use_container_width=True)
-else:
-    st.error("A coluna 'year' não foi encontrada no arquivo CSV. Por favor, verifique o arquivo de dados.")
+
