@@ -7,7 +7,7 @@ import plotly.express as px
 port = int(os.environ.get("PORT", 8501))
 
 # Carregar os dados
-car_data = pd.read_csv(r"C:\Users\andre\OneDrive\Documentos\vehicles.csv")
+car_data = pd.read_csv('vehicles.csv')
 
 # Verifique se a coluna 'model_year' existe
 if 'model_year' not in car_data.columns:
