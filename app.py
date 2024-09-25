@@ -7,7 +7,7 @@ import plotly.express as px
 port = int(os.environ.get("PORT", 8501))
 
 # Carregar os dados
-car_data = pd.read_csv('vehicles.csv')
+car_data = pd.read_csv(r"C:\Users\Santos\Documents\vehicles.csv.csv")
 
 # Verifique se a coluna 'model_year' existe
 if 'model_year' not in car_data.columns:
@@ -39,7 +39,8 @@ else:
         st.write(f'Criando um gráfico de dispersão entre a idade do veículo e o preço para veículos do ano: {selected_year}')
         
         # Criar um gráfico de dispersão
-        fig_scatter = px.scatter(filtered_data, x="model_year", y="price", color="skyblue", title=f"Dispersão: Ano do Veículo vs Preço ({selected_year})")
+        fig_scatter = px.scatter(filtered_data, x="model_year", y="price", title=f"Dispersão: Ano do Veículo vs Preço ({selected_year})")
+        fig_scatter.update_traces(marker=dict(color='skyblue'))
         
         # Exibir o gráfico de dispersão
         st.plotly_chart(fig_scatter, use_container_width=True)
